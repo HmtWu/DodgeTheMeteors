@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 50%, #2d1b69 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    background: #000;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.3);
+}
+
+#gameCanvas {
+    display: block;
+    background: linear-gradient(180deg, #0a0a2e 0%, #1a1a3e 50%, #000 100%);
+    border-radius: 7px;
+}
+
+.ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.score-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #00ff88;
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    pointer-events: auto;
+}
+
+.game-over-screen, .start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+    pointer-events: auto;
+}
+
+.start-screen {
+    border-color: #4ecdc4;
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.game-over-screen.hidden, .start-screen.hidden {
+    display: none;
+}
+
+.game-over-screen h1, .start-screen h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px currentColor;
+}
+
+.start-screen h1 {
+    color: #4ecdc4;
+    font-size: 28px;
+}
+
+.game-over-screen h1 {
+    color: #ff6b6b;
+}
+
+.game-over-screen p, .start-screen p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.instructions {
+    margin: 20px 0;
+    color: #ccc;
+}
+
+.instructions p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.restart-hint, .start-hint {
+    color: #ffeb3b !important;
+    font-weight: 700;
+    margin-top: 20px !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .game-container {
+        transform: scale(0.8);
+    }
+    
+    .game-over-screen, .start-screen {
+        padding: 20px;
+        width: 90%;
+    }
+    
+    .game-over-screen h1, .start-screen h1 {
+        font-size: 24px;
+    }
+}
