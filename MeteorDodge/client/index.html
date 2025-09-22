@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge the Meteors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ui-overlay">
+            <div class="score-display">
+                <span id="score">Score: 0</span>
+            </div>
+            <div class="game-over-screen" id="gameOverScreen">
+                <h1>GAME OVER</h1>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Best Score: <span id="bestScore">0</span></p>
+                <p class="restart-hint">Press SPACEBAR to restart</p>
+            </div>
+            <div class="start-screen" id="startScreen">
+                <h1>DODGE THE METEORS</h1>
+                <div class="instructions">
+                    <p>Use ← → arrow keys to move</p>
+                    <p>Avoid meteors, collect yellow stars!</p>
+                    <p>Each star gives +10 points</p>
+                </div>
+                <p class="start-hint">Press SPACEBAR to start</p>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+    </div>
+    <script src="/src/game.js"></script>
+</body>
+</html>
